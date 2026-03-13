@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="utf-8"> <!--encoding pt caractere. tb sa corespunda cu encondingul din browser-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="shaorma, mici, gratar, seminte, bere, Bucuresti, romanesc, mancare romaneasca, shaorma bucuresti, fast food Bucuresti, comanda mancare Bucuresti, livrare shaorma, livrare gratar">
+    <meta name="description"
+        content="Mâncare de halit pe bordură într-un cartier suspect.">
+    <meta name="author" content="Brînzei Sabina Maria">
+    <title>Mâncare urgentă</title>
+    <link rel="icon" type="image/png" href="./resurse/imagini/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./resurse/imagini/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="./resurse/imagini/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./resurse/imagini/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="./resurse/imagini/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="./resurse/css/general.css" type="text/css" />
+</head>
+
+<body>
+    <header>
+        <h1>Mâncare urgentă</h1> <!-- title e titlul tabului. asta e titlul paginii-->
+        <img src="./resurse/imagini/favicon.png" alt="sigla" />
+        <nav>
+            <ul>
+            <li>
+                <div><a href = "index.html">Acasă</a></div>
+                <ul>
+                    <li><a href="#welcome">Bine ati venit</a></li>
+                    <li><a href="#promotii">Promoții</a></li>
+                    <li><a href="#evenimente">Evenimente</a></li>
+                    <li><a href="#produse">Oferta</a></li>
+                    <li><a href="#program">Program</a></li>
+                    <li><a href="#locatii">Adresele locațiilor noastre</a></li>
+                    <li><a href="#retete">Rețete</a></li>
+                    <li><a href="#recenzii">Recenzii</a></li>
+                </ul>
+            
+            
+            </li>
+            <li>
+                <div><a href="comanda.html">Comandă</a></div>
+            </li>
+            <li><div><a href="despre.html">Despre noi</a></div>
+                <ul>                        
+                    <li><a href="#prezentare">Prezentare</a></li>
+                    <li><a href="despre.html#galerie">Galerie</a></li>
+                </ul>
+            </li>
+            <li><div><a href="meniu.html">Meniu</a></div>
+                <ul>
+                    <li><a href="meniu.html#gratar">Grătar</a></li>
+                    <li><a href="meniu.html#garnituri">Garnituri</a></li>
+                    <li><a href="meniu.html#deserturi">Deserturi</a></li>
+                    <li><a href="meniu.html#snacks">Snacks</a></li>
+                    <li><a href="meniu.html#bauturi">Băuturi</a></li>
+                </ul>
+            
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+            </ul>   
+        </nav>
+    </header>
+    <main> <!--  comentariu -->
+        <div id="grid-pagina">
+
+            <section id="welcome">
+                <hgroup>
+                    <h2>Poftă?</h2>
+                    <p class="subtitlu">Comandă și vom sosi <b>urgent</b>!</p>
+                </hgroup>
+
+                <p class="intro"><b>Fast-food</b> cu mâncarea pe care o savurezi cu tovarășii tăi pe bordura unui colț de stradă dintr-un cartier suspect.</p>
+                
+                <div class="intro-oferte"><div>Grătar</div><div>Shaorma</div><div>Dulciuri</div><div>Snacks</div><div>Băuturi</div></div>
+                <p class="anunt intro">Servire atât la locațiile noastre fizice, cât și prin <b>livrare la domiciliu</b>!</p>
+                <div id="dv-prezentare">
+                        <figure>
+                        <a href="./resurse/imagini/eu_mare.jpg">
+                        <picture>
+                            <!-- il ia pe primul care se potriveste cu query-ul din media-->
+                            <source srcset="./resurse/imagini/eu_mic.jpg" media="(max-width:700px)"/>
+                            <source srcset="./resurse/imagini/eu.jpg" media="(max-width:1200px)"/>
+                            <img src="./resurse/imagini/eu.jpg" alt="text" title="100% reală poza"/>
+                        </picture>
+                        </a>
+                        <figcaption><em>Fondatorul</em> cu mici</figcaption>
+                        </figure>
+                </div>
+
+                <div class="container-meniu-interactiv">
+                    <div class="meniu-desktop">
+                        <img src="./resurse/imagini/meniu.png" usemap="#mapa-desktop" alt="Meniu Fast Food">
+                        <map name="mapa-desktop">
+                        <area shape="circle" coords="664,191,60" href="#bauturi" alt="Băuturi" title="Băuturi">
+                        <area shape="circle" coords="594,624,150" href="#shaorma" alt="Shaorma" title="Shaorma">
+                        <area shape="circle" coords="328,384,100" href="#gratar" alt="Grătar" title="Grătar">
+                        <area shape="circle" coords="250,176,100" href="#gratar" alt="Grătar" title="Grătar">
+                        <area shape="circle" coords="72,290,50" href="#snacks" alt="Snack" title="Snacks">
+                        <area shape="circle" coords="100,591,60" href="#deserturi" alt="Desert" title="Deserturi">
+                        <area shape="circle" coords="582,320,100" href="#garnituri" alt="Garnitură" title="Garnitură">
+                        <area shape="circle" coords="213,485,50" href="#garnituri" alt="Garnitură" title="Garnitură">
+                        <area shape="circle" coords="525,207,75" href="#garnituri" alt="Garnitură" title="Garnitură">
+                        </map>
+                    </div>
+
+                    <div class="meniu-mobil">
+                        <img src="./resurse/imagini/meniu_mic.png" usemap="#mapa-mobil" alt="Meniu Fast Food Mobil">
+                        <map name="mapa-mobil">
+                        <map name="mapa-desktop">
+                        <area shape="circle" coords="332,97,27" href="#bauturi" alt="Băuturi" title="Băuturi">
+                        <area shape="circle" coords="283,309,60" href="#shaorma" alt="Shaorma" title="Shaorma">
+                        <area shape="circle" coords="130,86,45" href="#gratar" alt="Grătar" title="Grătar">
+                        <area shape="circle" coords="155,189,35" href="#gratar" alt="Grătar" title="Grătar">
+                        <area shape="circle" coords="33,154,35" href="#snacks" alt="Snack" title="Snacks">
+                        <area shape="circle" coords="52,302,30" href="#deserturi" alt="Desert" title="Deserturi">
+                        <area shape="circle" coords="286,167,44" href="#garnituri" alt="Garnitură" title="Garnitură">
+                        <area shape="circle" coords="261,100,37" href="#garnituri" alt="Garnitură" title="Garnitură">
+                        <area shape="circle" coords="107,246,26" href="#garnituri" alt="Garnitură" title="Garnitură">
+                        </map>
+                    </div>
+                    <p>Apasă pe un produs pentru a-i vizualiza categoria în meniu!</p>
+                </div>
+
+
+
+            </section>
+            <section id="promotii">
+                <h2>Oferte</h2>
+                <article>
+                    <h3 class="titlu">Mărțișaorma</h3>
+                    <p>Începe bine primăvara cu o shaorma bine dezvoltată la ofertă de 1+1 gratis și fă-i ziua unei persoane dragi!</p>
+                    <p>Oferta este valabilă între 1 și 7 martie.</p>
+                    <p>Bonus: vine cu tot cu șnur!</p>
+                </article>
+                <article>
+                    <h3>Vinerea uriașă</h3>
+                    <p>În fiecare vineri ai reducere de <s>25%</s> <ins>30%</ins> la meniurile mari!</p>
+                    <ol>
+                        <li>Meniu mici + garnitură + băutură</li>
+                        <li>Meniu friptură/cârnați + garnitură + băutură</li>
+                        <li>Meniu shaorma cu pui/vită/vegetariană + băutură</li>
+                        <li>Meniu gustare duo 2 snacks + 2 dulciuri + 2 băuturi</li>
+                    </ol>
+                </article>
+                <article>
+                    <h3>Mici pentru cei mici</h3>
+                    <p>Reducere de 25% la mici pentru persoanele sub 18 ani.</p>
+                    <p>Ofertă valabilă doar în weekend, <em>nu</em> încurajăm chiulul!</p>                    
+                </article>
+            </section>
+            <section id="produse">
+                <h2>Meniu</h2>
+                <section>
+                    <h3 id="gratar">Grătar</h3>
+                    <ul>
+                        <li>Friptură</li>
+                        <li>Mici</li>
+                        <li>Cârnați</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3 id="garnituri">Garnituri</h3>
+                    <ul>
+                        <li>Cartofi prăjiți</li>
+                        <li>Varză</li>
+                        <li>Murături</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3 id = "shaorma">Shaorma</h3>
+                    <ul>
+                        <li>Cu pui</li>
+                        <li>Cu vită</li>
+                        <li>Vegetariană</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h3 id="snacks">Snacks</h3>
+                    <ul>
+                        <li>Pufuleți Lotto</li>
+                        <li>Kubeti</li>
+                        <li>Semințe pestrițe</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3 id = "deserturi">Deserturi</h3>
+                    <ul>
+                        <li>Napolitane Joe</li>
+                        <li>Pernițe Viva</li>
+                        <li>Eugenia</li>
+                        <li>Ciocobanana</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3 id = "bauturi">Băuturi</h3>
+                    <section>
+                        <h4>Bere</h4>
+                        <ul>
+                            <li>Ciuc</li>
+                            <li>Ursus</li>
+                            <li>Cidru</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h4>Răcoritoare</h4>
+                    </section>
+                    <ul>
+                        <li>Pepsi</li>
+                        <li>Cola</li>
+                        <li>Mirinda</li>
+                    </ul>
+                    <section>
+                        <h4>Calde</h4>
+                    </section>
+                    <ul>
+                        <li>Cafea</li>
+                        <li>Ceai</li>
+                    </ul>
+                </section>
+                <div><h3>Valori Nutriționale</h3>
+                    <embed src="./resurse/valori_nutritionale.pdf" type="application/pdf" width="100%" height="600">
+                    <p><a href = "resurse/valori_nutritionale.pdf" download = "Valori Nutriționale"> Descarcă aici</a></p>
+                </div>
+            </section>
+            <section id="program">
+                <h2>Program</h2>
+                <table id="tab-orar">
+                    <caption>Programul locațiilor fizice și a serviciilor de livrare:</caption>
+                    <thead>
+
+                        <tr>
+                            <th>Zi</th>
+                            <th>Berceni</th>
+                            <th>Drumul Taberei</th>
+                            <th>Titan</th>
+                            <th>Livrare</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Luni</td>
+                            <td>10:00-20:00</td>
+                            <td>10:00-20:00</td>
+                            <td>10:00-20:00</td>
+                            <td>10:00-22:00</td>
+                        </tr>
+                        <tr>
+                            <td>Marți</td>
+                            <td>10:00-20:00</td>
+                            <td>10:00-20:00</td>
+                            <td>10:00-20:00</td>
+                            <td>10:00-22:00</td>
+                        </tr>
+                        <tr>
+                            <td>Miercuri</td>
+                            <td>10:00-20:00</td>
+                            <td>10:00-20:00</td>
+                            <td>10:00-20:00</td>
+                            <td>10:00-22:00</td>
+                        </tr>
+                        <tr>
+                            <td>Joi</td>
+                            <td>10:00-20:00</td>
+                            <td>10:00-20:00</td>
+                            <td>10:00-20:00</td>
+                            <td>10:00-22:00</td>
+                        </tr>
+                        <tr>
+                            <td>Vineri</td>
+                            <td>10:00-22:00</td>
+                            <td>10:00-22:00</td>
+                            <td>10:00-22:00</td>
+                            <td>10:00-22:00</td>
+                        </tr>
+                        <tr>
+                            <td>Sâmbătă</td>
+                            <td>10:00-20:00</td>
+                            <td>10:00-20:00</td>
+                            <td>10:00-20:00</td>
+                            <td>11:00-20:00</td>
+                        </tr>
+                        <tr>
+                            <td>Duminică</td>
+                            <td>12:00-16:00</td>
+                            <td>12:00-16:00</td>
+                            <td>12:00-16:00</td>
+                            <td>12:00-20:00</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="5">Închis cu ocazia sărbătorilor legale.</td>
+                        </tr>
+                    </tfoot>
+                </table> 
+            </section>
+            <figure id="fig1" class="fg-img">
+                <img src="./resurse/imagini/shaorma_desen.png" alt="shaorma">
+                <figcaption>Shaorma 1</figcaption>
+            </figure>
+            <figure id="fig2" class="fg-img">
+            <img src="./resurse/imagini/shaorma_desen.png" alt="shaorma">
+                <figcaption>Shaorma 2</figcaption>
+            </figure>
+            <figure  id="fig3" class="fg-img">
+                <img src="./resurse/imagini/shaorma_desen.png" alt="shaorma">
+                <figcaption>Shaorma 3</figcaption>
+            </figure>
+            <section id="evenimente">
+                <h2>Evenimente</h2>
+                <ul>
+                    <li><time datetime="2026-03-08">8 martie, </time><b> Buchet de ziua femeii</b> - 
+                    Pe 8 martie servim buchete de mici și cartofi, miros mai bine decât cele reale!</li>
+                    <li><time datetime="2026-03-27">27 martie, </time><b> Ziua murăturilor</b> - 
+                    Murături extra dacă comanda ta depășește 67 de lei. Murăturile sunt o selecție fină a poduselor colaboratorului nostru preferat - Beciul Bunicii.</li>
+                    <li><time datetime="2026-05-01">1 mai, </time><b>Mâncă, mâncă, mâncă</b> - 
+                    Reducere de 50% la toate produsele și 4 beri + 1 gratis.
+                    </li>
+                </ul>
+            </section>
+            <section id="locatii">
+                <h2>Adresele locațiilor noastre</h2>
+                <details><summary>Berceni</summary>
+                    <p>Strada Băluței 22, 040789, București</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.8842997291954!2d26.0995867!3d44.4355355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff472f47f047%3A0x493984726f0235f9!2sFaculty%20of%20Mathematics%20and%20Computer%20Science!5e0!3m2!1sen!2sro!4v1773002519993!5m2!1sen!2sro" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </details>
+                <details><summary>Drumul Taberei</summary>
+                    <p>Strada Foamei 76, 069860, București</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.9549797243076!2d26.038219875568807!3d44.434085701578006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b201f609995a6f%3A0x8a7b024778b7d337!2sPolitehnica%20Business%20Tower!5e0!3m2!1sen!2sro!4v1773002633312!5m2!1sen!2sro" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </details>
+                <details><summary>Titan</summary>
+                    <p>Strada Poftei 23, 039870, București</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1016.348977887057!2d26.15631540874938!3d44.420445703686035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1febea353c335%3A0x544cbdbd200b3a22!2sDogs&#39;%20Island!5e0!3m2!1sen!2sro!4v1773002935513!5m2!1sen!2sro" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </details>
+            </section>
+            <section id="retete">
+            <h2>Rețete recomandate</h2>
+            <p>Rețete asemănătoare dar sigur nu mai bune decât ale noastre: </p>
+            <div class="container-iframe">
+                <div class="taburi-iframe">
+                <a href="https://www.youtube.com/embed/ydJwJoOCGb8" target="ifr-video">Rețetă shaorma</a>
+                <a href="https://www.youtube.com/embed/-QoSxlU-UQY" target="ifr-video" >Rețetă mici</a>
+                <a href="https://www.youtube.com/embed/4-sEIglngDA" target="ifr-video" >Cum trebuie să sfârâie</a><br/>
+                </div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ydJwJoOCGb8" name="ifr-video" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </section>
+        <section id="recenzii">
+            <h2>Recenzii</h2>
+            <p>Ce spun clienții: </p>
+            <p>Lenghel <meter min="0" max="5" value="5" low="2" high="4" optimum = "5"> 5/5 </meter><br> Cea mai bună shaorma din București (îmi place să mănânc).</p>
+            <p>Nicușor Dan <meter min="0" max="5" value="4.5" low="2" high="4" optimum = "5"> 5/5 </meter><br> Better than pie</p>
+            <p>Jamila Cuisine<meter min="0" max="5" value="2" low="2" high="4" optimum = "5"> 5/5 </meter><br> Mi-au furat rețeta... Le-a cam ieșit totuși...</p>
+
+        </section>
+        </div>
+        <section id = "prezentare">
+            <h2>Prezentare</h2>
+            <p>Aducem cele mai îndrăgite mâncăruri stradale într-un singur loc. Shaorma este una dintre felurile de mâncare preferate ale românilor (sursa: <a href= "https://foodisiak.ro/2024/06/12/top-5-mancaruri-preferate-de-romani-in-2024/#:~:text=3.%20Shaorma%20%E2%80%93%20Delicatesa%20oriental%C4%83%20la%20%C3%AEndem%C3%A2n%C4%83"  target ="_blank">https://foodisiak.ro/2024/06/12/top-5-mancaruri-preferate<wbr>-de-romani-in-2024/#:~:text=3.%20Shaorma%20%E2%80%93%20Delicatesa<wbr>%20oriental%C4%83%20la%20%C3%AEndem%C3%A2n%C4%83</a>), chiar dacă nu este tradițională.  </p>
+            <p>Până și faimosul youtuber Lenghel ne-a lăudat produsele în cartea sa: <a href="https://carturesti.ro/carte/ionut-lenghel-oda-shaormei-2025070333" target ="_blank">Oda Shaormei</a>.</p>
+        </section>
+        <section id="galerie-statica">
+            <h2>Galerie</h2>
+            <div id="grid-galerie">
+                <figure>
+                <img src="resurse/imagini/shaorma_desen.png" alt="shaorma">                
+                <figcaption>Shaorma</figcaption>
+                </figure>
+                <figure>
+                <img src="resurse/imagini/shaorma_desen.png" alt="shaorma">
+                <figcaption>Shaorma</figcaption>
+                </figure>
+                <figure>
+                <img src="resurse/imagini/shaorma_desen.png" alt="shaorma">
+                <figcaption>Shaorma</figcaption>
+                </figure>
+                <figure>
+                <img src="resurse/imagini/shaorma_desen.png" alt="shaorma">
+                <figcaption>Shaorma</figcaption>
+                </figure>
+                <figure>
+                <img src="resurse/imagini/shaorma_desen.png" alt="shaorma">
+                <figcaption>Shaorma</figcaption>
+                </figure>
+                <figure>
+                <img src="resurse/imagini/shaorma_desen.png" alt="shaorma">
+                <figcaption>Shaorma</figcaption>
+                </figure>
+                <figure>
+                <img src="resurse/imagini/shaorma_desen.png" alt="shaorma">
+                <figcaption>Shaorma</figcaption>
+                </figure>
+            
+            </div>
+        </section>
+        
+    </main>
+    <footer>
+        <p>Telefon: <a href = "tel+40712345678">0712345678</a></p>
+        <p>Email: <a href = "mailto:mancare.rapida@foame.ro">mancare.rapida@foame.ro</a></p>
+        <p>Adresă sediu principal: <a href = "https://www.google.com/maps/place/Faculty+of+Mathematics+and+Computer+Science/@44.4355355,26.0995867,17z/data=!3m1!4b1!4m6!3m5!1s0x40b1ff472f47f047:0x493984726f0235f9!8m2!3d44.4355355!4d26.0995867!16s%2Fg%2F1td63tdh?entry=ttu&g_ep=EgoyMDI2MDMwNS4wIKXMDSoASAFQAw%3D%3D" target ="_blank">Strada Băluței 22, 040789<br> București</a></p>
+        <a aria-label="Chat on WhatsApp" href="https://wa.me/+4012345678"> <img alt="Chat on WhatsApp" src="./resurse/whatsapp_btn/ChatOnWhatsAppButton/WhatsAppButtonGreenLarge.png" /></a>
+        <p><a href="#">Du-te sus</a></p>
+        <small>
+        &copy;<time datetime="2026-03-09"> martie 2026 </time> Sabina Brînzei
+        </small>
+    </footer>
+</body>
+
+</html>
