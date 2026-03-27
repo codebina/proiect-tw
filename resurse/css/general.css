@@ -1,15 +1,16 @@
 body {
-    --culoare-fundal: #18593B;
-    --culoare-contur: #730909;
-    --culoare-sec: #FAB836;
-    --culoare-link: #F58514;
-    --culoare-detaliu: #B53424;
+    --culoare-fundal: #7D0A0A;
+    --culoare-contur: #212121;
+    --culoare-sec: #F3EDC8;
+    --culoare-nav: #BF3131;
+    --culoare-detaliu: #E2C055;
     --margine-pagina: 120px;
     --spatiere-grid: 10px;
     background-color: var(--culoare-fundal);
     font-family: var(--font-principal);
     font-family: 'Gluten';
-    color: var(--culoare-sec);
+    color:var(--culoare-sec); 
+    
 }
 
 p {
@@ -17,7 +18,7 @@ p {
 }
 
 a {
-    color: var(--culoare-link);
+    color: var(--culoare-detaliu);
 }
 
 main {
@@ -25,6 +26,19 @@ main {
     margin-right: var(--margine-pagina);
 }
 
+.header-titlu{
+    display:flex;
+    align-items:center;
+}
+
+#logo-seminte{
+    width: 100px;  
+    transition: transform 1s linear;  
+}
+
+#logo-seminte:hover{
+    transform:rotate(360deg);
+}
 .gluten-font {
     font-family: "Gluten", cursive;
     font-optical-sizing: auto;
@@ -49,6 +63,26 @@ figure>img {
     max-width: 800px;
 }
 
+/*ex2 layout*/
+
+#grid-pagina {
+    display: grid;
+    /*grid pe 3 coloane*/
+    gap: var(--spatiere-grid);
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "z-welcome z-welcome z-welcome z-welcome"
+        "orar orar produse produse"
+        "locatii evenimente produse produse"
+        "promotii evenimente produse produse"
+        "promotii retete retete recenzii";
+    color: var(--culoare-fundal );
+    h2 {
+    color: var(--culoare-contur);
+}
+}
+
+/*ex3 butoane iframe*/
 
 .container-iframe {
     display: flex;
@@ -71,10 +105,10 @@ figure>img {
 .taburi-iframe>a {
     display: inline-block;
     padding: 5px;
-    border: 2px solid var(--culoare-detaliu);
+    border: 2px solid var(--culoare-fundal);
     text-decoration: none;
-    background-color: var(--culoare-link);
-    color: var(--culoare-detaliu);
+    background-color: var(--culoare-nav);
+    color: var(--culoare-fundal);
     border-top-right-radius: 20px;
 }
 
@@ -84,22 +118,7 @@ figure>img {
     transition: all 0.5s linear;
 }
 
-#grid-pagina {
-    display: grid;
-    /*grid pe 3 coloane*/
-    gap: var(--spatiere-grid);
-
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "z-welcome z-welcome z-welcome z-welcome"
-        "orar orar produse produse"
-        "locatii evenimente produse produse"
-        "promotii evenimente produse produse"
-        "promotii retete retete recenzii";
-    color: var(--culoare-detaliu );
-    h2 {
-    color: var(--culoare-contur);
-}
-}
+/*ex4 tabel*/
 
 table {
     border-spacing: 1px;
@@ -109,7 +128,7 @@ table {
 }
 
 tbody td:nth-child(2n+1) {
-    color: var(--culoare-detaliu);
+    color: var(--culoare-fundal);
     border: 1px solid var(--culoare-contur);
 
 }
@@ -121,8 +140,8 @@ tbody td:nth-child(2n) {
 
 tbody td:hover {
     border: 5px solid var(--culoare-contur);
-    color: var(--culoare-sec);
-    background-color: var(--culoare-detaliu);
+    color: var(--culoare-detaliu);
+    background-color: var(--culoare-fundal);
     transition: all 0.75s linear;
 }
 
@@ -217,10 +236,15 @@ tbody td:hover {
         max-width: 100%;
     }
 
+    #logo-seminte:hover {
+        transform: none;
+    }
+
 }
 
 .poza-meniu{
-    border: 2px solid var(--culoare-contur);
+    border: 5px solid var(--culoare-fundal);
+    border-radius: 10px;
 }
 
 #grid-pagina>* {
@@ -228,7 +252,7 @@ tbody td:hover {
 
     border: 1px solid var(--culoare-contur);
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 0px 0px 5px var(--culoare-contur);
     background-color: var(--culoare-sec);
 }
@@ -266,17 +290,7 @@ tbody td:hover {
     grid-area: retete;
 }
 
-#fig1 {
-    grid-area: fig1;
-}
-
-#fig2 {
-    grid-area: fig2;
-}
-
-#fig3 {
-    grid-area: fig3;
-}
+/*ex5 link top*/
 
 #link-top {
     text-decoration: none;
@@ -305,7 +319,7 @@ tbody td:hover {
     width:100%;
     height:100%;
     border-radius:50%;
-    border:5px dashed var(--culoare-link);
+    border:5px dashed var(--culoare-contur);
     box-sizing: border-box;
     transition: transform 0.5s linear;
 }
@@ -313,7 +327,7 @@ tbody td:hover {
     transform:rotate(360deg);
 }
 #sageata {
-    color: var(--culoare-link);
+    color: var(--culoare-contur);
     font-size: 3rem;
     font-weight: bold;
     display: block;

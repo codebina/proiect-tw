@@ -23,14 +23,17 @@
 
 
     <link rel="stylesheet" href="./resurse/css/general.css" type="text/css" />
+    <link rel="stylesheet" href="./resurse/css/nav.css" type="text/css" />
 </head>
 
 <body>
     <header>
-        <h1>Mâncare urgentă</h1> <!-- title e titlul tabului. asta e titlul paginii-->
-        <img src="./resurse/imagini/favicon.png" alt="sigla" />
         <nav>
-            <ul>
+            <label id="hamburger" for="ch-menu">
+                <img src="resurse/imagini/Hamburger_icon_alb.png">
+            </label>
+            <input type="checkbox" id="ch-menu" />
+            <ul class="meniu">
                 <li>
                     <div><a href="index.html">Acasă</a></div>
                     <ul>
@@ -70,6 +73,10 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
+        <div class="header-titlu">
+            <img id ="logo-seminte" src="./resurse/imagini/favicon.png" alt="sigla" />
+            <h1>Mâncare urgentă</h1> <!-- title e titlul tabului. asta e titlul paginii-->
+        </div>
     </header>
     <main> <!--  comentariu -->
         <div id="grid-pagina">
@@ -108,7 +115,8 @@
 
                 <div class="container-meniu">
                     <div class="meniu-desktop">
-                        <img class="poza-meniu" src="./resurse/imagini/meniu.png" usemap="#mapa-desktop" alt="Meniu Fast Food">
+                        <img class="poza-meniu" src="./resurse/imagini/meniu.png" usemap="#mapa-desktop"
+                            alt="Meniu Fast Food">
                         <map name="mapa-desktop">
                             <area shape="circle" coords="664,191,60" href="#bauturi" alt="Băuturi" title="Băuturi">
                             <area shape="circle" coords="594,624,150" href="#shaorma" alt="Shaorma" title="Shaorma">
@@ -126,7 +134,8 @@
                     </div>
 
                     <div class="meniu-mobil">
-                        <img class="poza-meniu" src="./resurse/imagini/meniu_mic.png" usemap="#mapa-mobil" alt="Meniu Fast Food Mobil">
+                        <img class="poza-meniu" src="./resurse/imagini/meniu_mic.png" usemap="#mapa-mobil"
+                            alt="Meniu Fast Food Mobil">
                         <map name="mapa-mobil">
                             <map name="mapa-desktop">
                                 <area shape="circle" coords="332,97,27" href="#bauturi" alt="Băuturi" title="Băuturi">
