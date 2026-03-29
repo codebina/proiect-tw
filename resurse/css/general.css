@@ -9,8 +9,12 @@ body {
     background-color: var(--culoare-fundal);
     font-family: var(--font-principal);
     font-family: 'Gluten';
-    color:var(--culoare-sec); 
-    
+    color: var(--culoare-sec);
+
+}
+
+#watermark {
+    display: none;
 }
 
 p {
@@ -26,19 +30,20 @@ main {
     margin-right: var(--margine-pagina);
 }
 
-.header-titlu{
-    display:flex;
-    align-items:center;
+.header-titlu {
+    display: flex;
+    align-items: center;
 }
 
-#logo-seminte{
-    width: 100px;  
-    transition: transform 1s linear;  
+#logo-seminte {
+    width: 100px;
+    transition: transform 1s linear;
 }
 
-#logo-seminte:hover{
-    transform:rotate(360deg);
+#logo-seminte:hover {
+    transform: rotate(360deg);
 }
+
 .gluten-font {
     font-family: "Gluten", cursive;
     font-optical-sizing: auto;
@@ -76,10 +81,11 @@ figure>img {
         "locatii evenimente produse produse"
         "promotii evenimente produse produse"
         "promotii retete retete recenzii";
-    color: var(--culoare-fundal );
+    color: var(--culoare-fundal);
+
     h2 {
-    color: var(--culoare-contur);
-}
+        color: var(--culoare-contur);
+    }
 }
 
 /*ex3 butoane iframe*/
@@ -149,10 +155,12 @@ tbody td:hover {
     width: 100%;
     overflow-x: auto;
 }
-.meniu-desktop{
+
+.meniu-desktop {
     display: flex;
     justify-content: center;
 }
+
 .meniu-mobil {
     display: none;
 }
@@ -242,7 +250,7 @@ tbody td:hover {
 
 }
 
-.poza-meniu{
+.poza-meniu {
     border: 5px solid var(--culoare-fundal);
     border-radius: 10px;
 }
@@ -308,24 +316,26 @@ tbody td:hover {
     transition: opacity 0.5s linear;
 }
 
-#link-top:hover{
-    opacity:1;
+#link-top:hover {
+    opacity: 1;
 }
 
-#cerc{
+#cerc {
     position: absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    border-radius:50%;
-    border:5px dashed var(--culoare-contur);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 5px dashed var(--culoare-contur);
     box-sizing: border-box;
     transition: transform 0.5s linear;
 }
-#link-top:hover #cerc{
-    transform:rotate(360deg);
+
+#link-top:hover #cerc {
+    transform: rotate(360deg);
 }
+
 #sageata {
     color: var(--culoare-contur);
     font-size: 3rem;

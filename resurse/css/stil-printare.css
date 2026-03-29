@@ -1,0 +1,134 @@
+	@media print {
+
+		header {
+			display: flex;
+			flex-direction: column;
+			page-break-after: always;
+			align-items: center;
+		}
+
+		.header-titlu {
+			margin-top:7%;
+			width: 100%;
+			order: 1;
+		}
+
+		.header-titlu h1 {
+			margin: 0;
+			display: block;
+			width: 100%;
+			text-align: center;
+
+		}
+
+		nav {
+			order: 2;
+		}
+
+		#grid-pagina {
+			display: block;
+		}
+
+		ul.meniu {
+			display: block;
+			padding: 0;
+			margin: 0;
+		}
+
+		ul.meniu ul {
+			display: block !important;
+		}
+
+		ul.meniu li {
+			display: block;
+			height: auto;
+			border: none;
+			text-align: justify;
+		}
+
+		html,
+		body {
+			width: 210mm;
+			overflow: visible !important;
+		}
+
+		#watermark {
+			width: 60%;
+			height: 10%;
+			position: fixed;
+			top: 45%;
+			left: 20%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			color: rgba(0, 0, 0, 0.3);
+			background: transparent;
+			font-size: 2em;
+			font-weight: bold;
+			z-index: 101;
+		}
+
+		#banner {
+			position: absolute;
+			width: 50%;
+			top: 0;
+			right: 0;
+			border: black double;
+			background-color: white;
+			box-sizing: border-box;
+			z-index: 1000;
+		}
+
+		footer {
+			page-break-before: always;
+		}
+
+		@page {
+			size: A4 portrait;
+			margin-bottom: 2cm;
+			margin-top: 2cm;
+			counter-increment: page;
+
+		}
+
+		@page: left {
+
+			margin-left: 2cm;
+			margin-right: 1cm;
+		}
+
+		@page: right {
+
+			margin-right: 2cm;
+			margin-left: 1cm;
+		}
+
+		iframe {
+			display: none;
+		}
+
+		.container-iframe {
+			display: none;
+		}
+
+		img {
+			display: none;
+		}
+
+		figure {
+			display: none;
+		}
+
+		#link-top,
+		#cerc,
+		#sageata {
+			display: none;
+		}
+
+		a {
+			text-decoration: none;
+			color: var(--culoare-contur);
+		}
+		
+	}

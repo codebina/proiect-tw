@@ -1,0 +1,117 @@
+$latime-buton: 150px;
+$inaltime-buton: 50px;
+
+nav {
+    --culoare-fundal: #7D0A0A;
+    --culoare-contur: #212121;
+    --culoare-sec: #F3EDC8;
+    --culoare-nav: #BF3131;
+    --culoare-detaliu: #E2C055;
+    background-color: var(--culoare-nav);
+    z-index: 100;
+    position: relative;
+
+    #hamburger,
+    #ch-menu {
+        display: none;
+
+    }
+}
+
+ul.meniu {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    .imag-icon {
+        display: inline-block;
+    }
+
+    li {
+        display: block;
+        width: $latime-buton;
+        height: $inaltime-buton;
+        /* padding: 5px; */
+        border: 2px solid var(--culoare-fundal);
+        /* text-decoration: none; */
+        background-color: var(--culoare-nav);
+        color: var(--culoare-fundal);
+        /* border-top-right-radius: 20px; */
+        text-align: center;
+        line-height: $inaltime-buton;
+        transition: all 0.3s linear;
+
+        a {
+            color: var(--culoare-fundal);
+            text-decoration: none;
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        ul li:hover {
+            &::before {
+                content: "→";
+                position: absolute;
+                left: 10px;
+                font-weight: bold;
+                animation: slide_in 0.5s ease-out;
+            }
+        }
+    }
+
+    &>li {
+        &:hover {
+            box-shadow: inset 0px 0px 20px var(--culoare-detaliu);
+            cursor: pointer;
+        }
+    }
+
+    ul {
+        display: none;
+        padding: 0;
+        list-style-type: none;
+        z-index: 3;
+        position: relative;
+        margin-left: -1px;
+        animation: afis_submeniu 0.5s linear;
+        transform-origin: 50% 0;
+
+    }
+
+    &>li:hover ul {
+        display: block;
+        position: absolute;
+        z-index: 10;
+    }
+}
+
+@keyframes afis_submeniu {
+    0% {
+        transform: scaleY(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slide_in {
+    0% {
+        opacity: 0;
+        transform: translateX(-5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.text-icon,
+.imag-icon {
+    display: inline-block;
+}
