@@ -1,4 +1,9 @@
 @charset "UTF-8";
+ul.meniu ul, ul.meniu {
+  padding: 0;
+  list-style-type: none;
+}
+
 nav {
   --culoare-fundal: #7D0A0A;
   --culoare-contur: #212121;
@@ -16,8 +21,6 @@ nav #ch-menu {
 
 ul.meniu {
   display: flex;
-  list-style-type: none;
-  padding: 0;
   margin: 0;
 }
 ul.meniu .imag-icon {
@@ -57,8 +60,6 @@ ul.meniu > li:hover {
 }
 ul.meniu ul {
   display: none;
-  padding: 0;
-  list-style-type: none;
   z-index: 3;
   position: relative;
   margin-left: -1px;
