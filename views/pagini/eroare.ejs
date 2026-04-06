@@ -1,0 +1,37 @@
+<!-- ex 12-->
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta name="keywords"
+        content="shaorma, mici, gratar, seminte, bere, Bucuresti, romanesc, mancare romaneasca, shaorma bucuresti, fast food Bucuresti, comanda mancare Bucuresti, livrare shaorma, livrare gratar">
+    <meta name="description" content="Mâncare de halit pe bordură într-un cartier suspect.">
+    <meta name="author" content="Brînzei Sabina Maria">
+    <title>Mâncare Urgentă - eroare</title>
+    <link rel="stylesheet" type="text/css" href="/resurse/css/eroare.css" 
+    <%- include("../fragmente/head.ejs"); %>
+
+</head>
+
+<body>
+
+    <%- include("../fragmente/header.ejs"); %>
+
+        <main>
+            <div id="err-coloane">
+                <div id="err-imag">
+                    <img src="<%- locals.imagine %>" />
+                </div>
+                <section>
+                    <h2><%- locals.titlu %></h2>
+                    <p><%- locals.text %></p>
+                </section>
+            </div>
+        </main>
+
+        <%- include("../fragmente/footer.ejs"); %>
+
+
+</body>
+
+</html>

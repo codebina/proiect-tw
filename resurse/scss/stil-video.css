@@ -1,0 +1,14 @@
+#video-bere {
+  width: 80%;
+  min-width: 300px;
+  max-width: 800px;
+  display: block;
+}
+
+video::cue {
+  background-color: rgba(255, 255, 255, 0.3); /* Alb transparent (0.3) */
+  color: black;
+  font-family: "Gluten";
+}
+
+/*# sourceMappingURL=stil-video.css.map */

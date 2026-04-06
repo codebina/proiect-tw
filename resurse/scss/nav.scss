@@ -44,7 +44,7 @@ ul.meniu {
         /* border-top-right-radius: 20px; */
         text-align: center;
         line-height: $inaltime-buton;
-        transition: all 0.3s linear;
+        transition: all 0.3s ease;
 
         a {
             color: var(--culoare-fundal);
@@ -78,7 +78,7 @@ ul.meniu {
         z-index: 3;
         position: relative;
         margin-left: -1px;
-        animation: afis_submeniu 0.5s linear;
+        animation: afis_submeniu 0.5s ease;
         transform-origin: 50% 0;
 
     }

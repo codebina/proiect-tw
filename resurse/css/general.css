@@ -343,3 +343,37 @@ tbody td:hover {
     display: block;
     transform: scale(1.5, 0.6);
 }
+
+main a:visited:not(.taburi-iframe a) {
+    color: var(--culoare-contur);
+}
+
+main a[href^="http"]:not(.taburi-iframe a)::before {
+    content: "⮳";
+    position: relative;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+main a[href^="http"]:not(.taburi-iframe a):hover {
+    color: var(--culoare-detaliu);
+}
+
+main a:not(.taburi-iframe a) {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    background-image: radial-gradient(circle, var(--culoare-nav) 0%, var(--culoare-nav) 40%, transparent 80%, transparent 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 0% 0%;
+    transition: background-size 0.5s ease;
+}
+
+main a:not(.taburi-iframe a):hover {
+    background-size: 100% 100%;
+
+}
+main a:not(.taburi-iframe a):active {
+  border: 2px solid var(--culoare-contur);
+}

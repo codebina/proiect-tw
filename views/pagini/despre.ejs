@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <title>Cofetăria Dulcelind - despre</title>
+    <meta name="description" content="Motivație și descriere despre restaurantul fast-food Mâncare Urgentă">
+    <meta name="keywords"
+        content="ingrediente mâncare urgentă, poveste mâncare urgentă, galerie mâncare urgentă, imagini mâncare urgentă, echipa mâncare urgentă, istoric mâncare urgentă">
+    <%- include('../fragmente/head.ejs') %>
+    <link rel="stylesheet" href="/resurse/scss/stil-video.css" type="text/css" />
+</head>
+
+<body>
+    <%- include('../fragmente/header.ejs') %>
+        <main>
+            <section id="prezentare">
+                <h2>Prezentare</h2>
+                <p>Magazinul Mâncare Urgentă este un fast-food cu specific românesc, dar nu în sensul tradițional al
+                    cuvântului, ci al mâncării pe care o savurezi cu tovarășii tăi pe bordura unui colț de stradă
+                    dintr-un cartier suspect. Mâncare Urgentă întrunește orice de la grătar, shaorma până la semințe și
+                    bere.</p>
+
+                <p>Lucrăm numai cu ingrediente naturale, murăturile fiind chiar de cea mai înaltă calitate, scoase chiar
+                    din Beciul Bunicii, aici în România.</p>
+
+                <p>
+                    Echipa noastră este formată numai din cei mai profesioniști pasionați de mâncare gustoasă și
+                    calitativă.
+                </p>
+            </section>
+
+            <section id="istoric">
+                <h2>Istoric</h2>
+                <p>Totul a început când patroana a gustat pentru prima oară shaorma, fiind și prima din țară care să o
+                    descopere. Atunci, totul s-a schimbat. Dar ea era și o patrioată. Toată viața a avut visul îndrăzneț
+                    dar prea greu de implementat de a aduce toate mâncărurile românești pe care le găsești la colț de
+                    stradă împreună cu <b>shaorma</b>. Totul în același loc.</p>
+            </section>
+            <section id="galerie">
+                <h2>Galerie</h2>
+                <p>Aceasta este o galerie.</p>
+            </section>
+            <section id="vtt">
+                <h2>Ți-e poftă de-o bere?</h2>
+                <video id="video-bere" controls poster="/resurse/video/thumbnail.jpg" preload="metadata" id="berică">
+
+                    <source src="/resurse/video/bere1.mp4" type="video/mp4">
+                    <source src="/resurse/video/bere2.webm" type="video/webm">
+
+                    <track src="/resurse/video/tracks/subtitrari_romana.vtt" kind="subtitles" srclang="ro" label="Română" default>
+
+                    <track src="/resurse/video/tracks/subtitrari_engleza.vtt" kind="subtitles" srclang="en" label="English">
+
+                </video>
+            </section>
+        </main>
+        <%- include('../fragmente/footer.ejs') %>
+</body>
+
+</html>
