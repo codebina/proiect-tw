@@ -1,0 +1,25 @@
+@use '../../node_modules/bootstrap/scss/bootstrap.scss' with 
+(
+    $primary: #7D0A0A,
+    $secondary: #BF3131,
+    $body-bg: #7D0A0A,
+    $body-color: #F3EDC8,
+    $link-color: #E2C055,
+    $font-family-sans-serif: 'Gluten',
+
+    $h1-font-size: 2.5rem,
+    $h2-font-size: 1.75rem,
+    $h3-font-size: 1.5rem,
+    $h4-font-size: 1rem,
+
+    $border-radius: 10px,
+    
+    $grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 850px, 
+        lg: 1100px, 
+        xl: 1200px,
+        xxl: 1400px
+    )
+);

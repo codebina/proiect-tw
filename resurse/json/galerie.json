@@ -1,0 +1,89 @@
+{
+	"cale_relativa": "resurse/imagini/galerie",
+	"imagini": [
+		{
+			"fisier": "shaorma.webp",
+			"nume": "Shaorma",
+			"descriere": "Shaorma."
+		},
+		{
+			"fisier": "shaorma_bw.webp",
+			"nume": "Shaorma alb-negru",
+			"descriere": "Shaorma străveche",
+			"timp": [
+				"noapte"
+			]
+		},
+		{
+			"fisier": "shaorma_sepia.webp",
+			"nume": "Shaorma sepia",
+			"descriere": "Shaorma semi-străveche",
+			"timp": [
+				"zi",
+				"noapte"
+			]
+		},
+		{
+			"fisier": "shaorma_saturat.webp",
+			"nume": "Shaorma saturată",
+			"descriere": "Shaorma vioaie",
+			"timp": [
+				"dimineata",
+				"zi"
+			]
+		},
+		{
+			"fisier": "shaorma_ice.webp",
+			"nume": "Shaorma de gheață",
+			"descriere": "Shaorma din frigider"
+		},
+		{
+			"fisier": "shaorma_rosu.webp",
+			"nume": "Shaorma roșie",
+			"descriere": "Shaorma a luat foc"
+		},
+		{
+			"fisier": "shaorma_galben.webp",
+			"nume": "Shaorma galbenă",
+			"descriere": "Shaorma s-a bronzat",
+			"timp": [
+				"dimineata",
+				"zi"
+			]
+		},
+		{
+			"fisier": "shaorma_albastru.webp",
+			"nume": "Shaorma albastră",
+			"descriere": "Shaorma din congelator"
+		},
+		{
+			"fisier": "shaorma_verde.webp",
+			"nume": "Shaorma verde",
+			"descriere": "Shaorma radioactivă"
+		},
+		{
+			"fisier": "shaorma_grain.webp",
+			"nume": "Shaorma cu grain",
+			"descriere": "Shaorma de groază",
+			"timp": [
+				"noapte"
+			]
+		},
+		{
+			"fisier": "shaorma_cc.jpg",
+			"nume": "Ceva ce va fi shaorma",
+			"descriere": "Shaorma in the making",
+			"autor": "Krista",
+			"link_autor":"https://www.flickr.com/people/49215102@N00",
+			"sursa": "https://www.flickr.com/photos/scaredykat/11389669974/",
+			"licenta": "CC BY 2.0",
+			"link_licenta": "https://creativecommons.org/licenses/by/2.0/",
+			"modificari": "da"
+		},
+		{
+			"fisier": "shaorma_varza.webp",
+			"nume": "Shaorma cu varză",
+			"descriere": "Shaorma doar cu varză"
+		}
+	]
+}

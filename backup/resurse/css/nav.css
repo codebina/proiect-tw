@@ -38,7 +38,7 @@ ul.meniu li {
   /* border-top-right-radius: 20px; */
   text-align: center;
   line-height: 50px;
-  transition: all 0.3s linear;
+  transition: all 0.3s ease;
 }
 ul.meniu li a {
   color: var(--culoare-fundal);
@@ -63,7 +63,7 @@ ul.meniu ul {
   z-index: 3;
   position: relative;
   margin-left: -1px;
-  animation: afis_submeniu 0.5s linear;
+  animation: afis_submeniu 0.5s ease;
   transform-origin: 50% 0;
 }
 ul.meniu > li:hover ul {
