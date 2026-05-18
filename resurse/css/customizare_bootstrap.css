@@ -232,21 +232,16 @@ h1, .h1 {
 }
 
 h2, .h2 {
-  font-size: calc(1.3rem + 0.6vw);
+  font-size: calc(1.28rem + 0.36vw);
 }
 @media (min-width: 1200px) {
   h2, .h2 {
-    font-size: 1.75rem;
+    font-size: 1.55rem;
   }
 }
 
 h3, .h3 {
-  font-size: calc(1.275rem + 0.3vw);
-}
-@media (min-width: 1200px) {
-  h3, .h3 {
-    font-size: 1.5rem;
-  }
+  font-size: 1.25rem;
 }
 
 h4, .h4 {
@@ -8248,11 +8243,11 @@ textarea.form-control-lg {
 }
 
 .fs-2 {
-  font-size: calc(1.3rem + 0.6vw) !important;
+  font-size: calc(1.28rem + 0.36vw) !important;
 }
 
 .fs-3 {
-  font-size: calc(1.275rem + 0.3vw) !important;
+  font-size: 1.25rem !important;
 }
 
 .fs-4 {
@@ -11810,10 +11805,7 @@ textarea.form-control-lg {
     font-size: 2.5rem !important;
   }
   .fs-2 {
-    font-size: 1.75rem !important;
-  }
-  .fs-3 {
-    font-size: 1.5rem !important;
+    font-size: 1.55rem !important;
   }
 }
 @media print {

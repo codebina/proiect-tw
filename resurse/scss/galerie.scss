@@ -27,11 +27,8 @@
 
         .atribuire {
             font-size: 0.8rem;
-            /* Text vizibil mai mic decât restul */
             margin-top: 5px;
-            /* Puțin spațiu față de descriere */
             line-height: 1.2;
-            /* Să nu ocupe mult loc pe verticală */
         }
     }
 
@@ -41,7 +38,6 @@
         img {
             max-width: 100%;
             height: auto;
-            object-fit: cover;
         }
     }
 

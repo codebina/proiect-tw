@@ -1,13 +1,13 @@
 {
-	"cale_relativa": "resurse/imagini/galerie",
+	"cale_galerie": "resurse/imagini/galerie",
 	"imagini": [
 		{
-			"fisier": "shaorma.webp",
+			"cale_relativa": "shaorma.webp",
 			"nume": "Shaorma",
 			"descriere": "Shaorma."
 		},
 		{
-			"fisier": "shaorma_bw.webp",
+			"cale_relativa": "shaorma_bw.webp",
 			"nume": "Shaorma alb-negru",
 			"descriere": "Shaorma străveche",
 			"timp": [
@@ -15,7 +15,7 @@
 			]
 		},
 		{
-			"fisier": "shaorma_sepia.webp",
+			"cale_relativa": "shaorma_sepia.webp",
 			"nume": "Shaorma sepia",
 			"descriere": "Shaorma semi-străveche",
 			"timp": [
@@ -24,7 +24,7 @@
 			]
 		},
 		{
-			"fisier": "shaorma_saturat.webp",
+			"cale_relativa": "shaorma_saturat.webp",
 			"nume": "Shaorma saturată",
 			"descriere": "Shaorma vioaie",
 			"timp": [
@@ -33,17 +33,17 @@
 			]
 		},
 		{
-			"fisier": "shaorma_ice.webp",
+			"cale_relativa": "shaorma_ice.webp",
 			"nume": "Shaorma de gheață",
 			"descriere": "Shaorma din frigider"
 		},
 		{
-			"fisier": "shaorma_rosu.webp",
+			"cale_relativa": "shaorma_rosu.webp",
 			"nume": "Shaorma roșie",
 			"descriere": "Shaorma a luat foc"
 		},
 		{
-			"fisier": "shaorma_galben.webp",
+			"cale_relativa": "shaorma_galben.webp",
 			"nume": "Shaorma galbenă",
 			"descriere": "Shaorma s-a bronzat",
 			"timp": [
@@ -52,17 +52,17 @@
 			]
 		},
 		{
-			"fisier": "shaorma_albastru.webp",
+			"cale_relativa": "shaorma_albastru.webp",
 			"nume": "Shaorma albastră",
 			"descriere": "Shaorma din congelator"
 		},
 		{
-			"fisier": "shaorma_verde.webp",
+			"cale_relativa": "shaorma_verde.webp",
 			"nume": "Shaorma verde",
 			"descriere": "Shaorma radioactivă"
 		},
 		{
-			"fisier": "shaorma_grain.webp",
+			"cale_relativa": "shaorma_grain.webp",
 			"nume": "Shaorma cu grain",
 			"descriere": "Shaorma de groază",
 			"timp": [
@@ -70,7 +70,7 @@
 			]
 		},
 		{
-			"fisier": "shaorma_cc.jpg",
+			"cale_relativa": "shaorma_cc.jpg",
 			"nume": "Ceva ce va fi shaorma",
 			"descriere": "Shaorma in the making",
 			"autor": "Krista",
@@ -81,7 +81,7 @@
 			"modificari": "da"
 		},
 		{
-			"fisier": "shaorma_varza.webp",
+			"cale_relativa": "shaorma_varza.webp",
 			"nume": "Shaorma cu varză",
 			"descriere": "Shaorma doar cu varză"
 		}

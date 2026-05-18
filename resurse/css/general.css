@@ -403,7 +403,7 @@ main a:not(.taburi-iframe a):active {
     top: 50%;
     position: absolute;
     transform-origin: 0 0;
-    transform: translateX(9em) rotateZ(20deg) translateY(0.1em);
+    transform: translateX(8.5em) rotateZ(20deg) translateY(0.1em);
 }
 
 #reflexie:hover {
@@ -422,6 +422,7 @@ main a:not(.taburi-iframe a):active {
     background-size: 15px 100%;
     background-repeat: repeat-x;
     background-position: center;
+    opacity: 1;
 
 }
 

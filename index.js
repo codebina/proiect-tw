@@ -25,7 +25,7 @@ console.log("Cale fisier", __filename);
 
 // client=new pg.Client({
 //     database:"produse",
-//     user:"saba",
+//     user:"sabina",
 //     password:"sabina",
 //     host:"localhost",
 //     port:5432
@@ -92,7 +92,7 @@ function initImagini() {
 
     obGlobal.obImagini = JSON.parse(continut);
     let vImagini = obGlobal.obImagini.imagini;
-    let caleGalerie = obGlobal.obImagini.cale_relativa
+    let caleGalerie = obGlobal.obImagini.cale_galerie
 
     let caleAbs = path.join(__dirname, caleGalerie);
     let caleAbsMediu = path.join(caleAbs, "mediu");
@@ -102,17 +102,17 @@ function initImagini() {
     if (!fs.existsSync(caleAbsMic)) fs.mkdirSync(caleAbsMic);
 
     for (let imag of vImagini) {
-        [numeFis, ext] = imag.fisier.split("."); //"ceva.png" -> ["ceva", "png"]
+        [numeFis, ext] = imag.cale_relativa.split("."); //"ceva.png" -> ["ceva", "png"]
 
-        let caleFisAbs = path.join(caleAbs, imag.fisier);
+        let caleFisAbs = path.join(caleAbs, imag.cale_relativa);
         let caleFisMediuAbs = path.join(caleAbsMediu, numeFis + ".webp");
         let caleFisMicAbs = path.join(caleAbsMic, numeFis + ".webp");
 
         sharp(caleFisAbs).resize(400).toFile(caleFisMediuAbs);
-        imag.fisier_mediu = path.join("/", caleGalerie, "mediu", numeFis + ".webp")
+        imag.cale_relativa_mediu = path.join("/", caleGalerie, "mediu", numeFis + ".webp")
         sharp(caleFisAbs).resize(350).toFile(caleFisMicAbs);
-        imag.fisier_mic = path.join("/", caleGalerie, "mic", numeFis + ".webp")
-        imag.fisier = path.join("/", caleGalerie, imag.fisier)
+        imag.cale_relativa_mic = path.join("/", caleGalerie, "mic", numeFis + ".webp")
+        imag.cale_relativa = path.join("/", caleGalerie, imag.cale_relativa)
 
     }
     // console.log(obGlobal.obImagini)
@@ -180,7 +180,7 @@ app.get("/*pagina", function (req, res) {
         return;
     }
     try {
-        res.render("pagini" + req.url, function (err, rezRandare) {
+        res.render("pagini" + req.url, { imagini: obGlobal.obImagini?.imagini }, function (err, rezRandare) {
             if (err) {
                 if (err.message.includes("Failed to lookup view")) {
                     afisareEroare(res, 404); //ex 10

@@ -379,49 +379,9 @@
                         href="https://carturesti.ro/carte/ionut-lenghel-oda-shaormei-2025070333" target="_blank">Oda
                         Shaormei</a>.</p>
             </section>
-            <section id="galerie-statica">
-                <h2>Galerie</h2>
-                <div id="grid-galerie">
-                    <% oraNr=(new Date()).getHours(); if(oraNr>= 5 && oraNr < 12) timpCurent="dimineata" ; else
-                            if(oraNr>=12 && oraNr <20) timpCurent="zi" ; else timpCurent="noapte" ; %>
-                                <% count1=0; for(let imag of locals.imagini) {if (imag.timp?.includes(timpCurent) ||
-                                    !imag.timp) count1++;} count1 -=count1%3; count2=0; for(let imag of locals.imagini)
-                                    { if ((imag.timp?.includes(timpCurent) || !imag.timp) && count2<count1) { count2++;
-                                    %>
-                                    <figure>
-                                        <picture>
-                                            <source srcset="<%- imag.fisier_mic %>" media="(max-width:700px)">
-                                            <source srcset="<%- imag.fisier_mediu %>" media="(max-width:1100px)">
-                                            <img src="<%- imag.fisier %>" title="<%- imag.descriere %>"
-                                                alt="<%- imag.nume %>">
-                                            <figcaption>
-                                                <%- imag.descriere %>
-
-                                                    <% if(imag.autor) { %>
-                                                        <p class="atribuire">
-                                                            <a href="<%- imag.sursa %>" target="_blank">Sursă
-                                                                imagine</a>
-                                                            de
-                                                            <a href="<%- imag.link_autor %>" target="_blank"><%-
-                                                                    imag.autor %></a>
-                                                            <br>
-                                                            Licență: <a href="<%- imag.link_licenta %>"
-                                                                target="_blank"><%- imag.licenta %></a>
-                                                            <% if(imag.modificari=="da" ) { %>
-                                                                (modificată: redimensionare)
-                                                                <% } %>
-                                                        </p>
-                                                        <% } %>
-                                            </figcaption>
-                                        </picture>
-                                    </figure>
-
-                                    <% } %>
-                                        <% } %>
-                </div>
-            </section>
-
+            <%- include ("../fragmente/galerie.ejs") %>
         </main>
+        
         <%- include ("../fragmente/footer.ejs") %>
 </body>
 
