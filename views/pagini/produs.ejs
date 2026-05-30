@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta name="description" content="Meniu Mâncare Urgentă - Detalii produs">
+    <meta name="keywords" content="ingrediente mâncare urgentă, detalii produs, <%- locals.prod.nume %>">
+    
+    <title>Mâncare Urgentă - <%- locals.prod.nume %></title>
+    <%- include("../fragmente/head") %>     
+    <link href="/resurse/css/produs.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <%- include("../fragmente/header") %>
+    
+    <main class="container-pagina-produs">
+        <section id="sectiune-produs-individual">
+            <h2>Vizualizare Produs</h2>
+            
+            <article id="art-produs" class="produs-individual-card">
+                <h3 class="nume-produs-titlu"><%- locals.prod.nume %></h3>
+                
+                <div class="produs-individual-grid">
+                    <div class="zona-imagine">
+                        <figure class="imag-produs">
+                            <img src="/resurse/imagini/produse/<%- locals.prod.imagine %>" alt="[imagine <%- locals.prod.nume %>]" />
+                        </figure>
+                    </div>
+
+                    <div class="zona-detalii">
+                        <% 
+                            let zileSaptamana = ["Duminica", "Luni", "Marți", "Miercuri", "Joi", "Vineri", "Sambătă"];
+                            let luniAn = ["Ianuarie", "Februarie", "Martie", "Aprilie", "Mai", "Iunie", "Iulie", "August", "Septembrie", "Octombrie", "Noiembrie", "Decembrie"];
+                            
+                            let dataObj = new Date(locals.prod.data_adaugare);
+                            let zi = dataObj.getDate();
+                            let numeLuna = luniAn[dataObj.getMonth()];
+                            let an = dataObj.getFullYear();
+                            let ziSapt = zileSaptamana[dataObj.getDay()];
+                            let dataFormatataRo = `${zi} ${numeLuna} ${an} [${ziSapt}]`;
+                        %>
+                        <ul class="specificatii-lista">
+                            <li>
+                                <strong class="eticheta">Preț:</strong>
+                                <span class="valoare accent-pret"><%- locals.prod.pret %> LEI</span>
+                            </li>
+                            <li>
+                                <strong class="eticheta">Gramaj:</strong>
+                                <span class="valoare"><%- locals.prod.gramaj %> g</span>
+                            </li>
+                            <li>
+                                <strong class="eticheta">Tip Produs:</strong>
+                                <span class="valoare"><%- locals.prod.tip_produs %></span>
+                            </li>
+                            <li>
+                                <strong class="eticheta">Timp Servire:</strong>
+                                <span class="valoare"><%- locals.prod.categorie %></span>
+                            </li>
+                            <li>
+                                <strong class="eticheta">Vegetarian:</strong>
+                                <span class="valoare"><%- locals.prod.vegetarian ? 'Da' : 'Nu' %></span>
+                            </li>
+                            <li>
+                                <strong class="eticheta">Ingrediente:</strong>
+                                <span class="valoare ingrediente-text">
+                                    <%- locals.prod.ingrediente && locals.prod.ingrediente.length > 0 ? locals.prod.ingrediente.join(', ') : 'Nu sunt specificate' %>
+                                </span>
+                            </li>
+                            <li>
+                                <strong class="eticheta">Data adăugare:</strong>
+                                <span class="valoare">
+                                    <time datetime="<%- locals.prod.data_adaugare %>"><%- dataFormatataRo %></time>
+                                </span>
+                            </li>
+                        </ul>
+
+                        <div class="zona-descriere">
+                            <strong class="eticheta-descriere">Descriere:</strong>
+                            <p class="descriere-text"><%- locals.prod.descriere %></p>
+                        </div>
+                        
+                        <div class="zona-actiuni">
+                            <a href="/meniu" class="buton-inapoi">← Înapoi la Meniu</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <%- include("../fragmente/footer") %>
+</body>
+</html>

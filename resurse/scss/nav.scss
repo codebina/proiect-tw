@@ -6,14 +6,28 @@ $inaltime-buton: 50px;
     list-style-type: none;
 }
 
-nav {
+body {
     --culoare-fundal: #7D0A0A;
     --culoare-contur: #212121;
     --culoare-sec: #F3EDC8;
     --culoare-nav: #BF3131;
     --culoare-detaliu: #E2C055;
+    background-color: var(--culoare-fundal);
+    font-family: 'Gluten';
+    color: var(--culoare-sec);
+}
+
+body.dark {
+    --culoare-fundal: #1a0303; 
+    --culoare-contur: #121212; 
+    --culoare-sec: #f7f4eb; 
+    --culoare-nav: #4a0e0e; 
+    --culoare-detaliu: #d4ae37;
+}
+
+nav {
     background-color: var(--culoare-nav);
-    z-index: 100;
+    z-index: 9999;
     position: relative;
 
     #hamburger,
@@ -22,6 +36,7 @@ nav {
 
     }
 }
+
 
 ul.meniu {
     display: flex;
@@ -75,7 +90,7 @@ ul.meniu {
     ul {
         display: none;
         @extend %stil_ul;
-        z-index: 3;
+        z-index: 9999;
         position: relative;
         margin-left: -1px;
         animation: afis_submeniu 0.5s ease;
@@ -86,7 +101,7 @@ ul.meniu {
     &>li:hover ul {
         display: block;
         position: absolute;
-        z-index: 10;
+        z-index: 9999;
     }
 }
 

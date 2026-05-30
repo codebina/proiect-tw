@@ -1,0 +1,167 @@
+.container-pagina-produs {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+#sectiune-produs-individual h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.produs-individual-card {
+    background-color: var(--culoare-sec);
+    color: var(--culoare-contur);
+    border: 3px solid var(--culoare-contur);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.nume-produs-titlu {
+    font-family: 'Gluten', cursive;
+    font-size: 2.2rem;
+    color: var(--culoare-fundal);
+    margin-top: 0;
+    margin-bottom: 25px;
+    border-bottom: 3px dotted var(--culoare-nav);
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.produs-individual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.imag-produs {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.imag-produs img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border: 3px solid var(--culoare-contur);
+    border-radius: 8px;
+    box-shadow: 5px 5px 0px var(--culoare-contur);
+}
+
+.zona-detalii {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.specificatii-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.specificatii-lista li {
+    display: flex;
+    align-items: flex-start;
+    font-size: 1.05rem;
+    line-height: 1.4;
+}
+
+.eticheta {
+    font-weight: bold;
+    background-color: var(--culoare-nav);
+    color: var(--culoare-sec);          
+    padding: 4px 12px;
+    border-radius: 4px;
+    margin-right: 15px;
+    display: inline-block;
+    min-width: 150px; 
+    font-size: 0.95rem;
+    text-align: left;
+}
+
+.valoare {
+    color: var(--culoare-contur);
+    font-weight: 500;
+}
+
+.accent-pret {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: var(--culoare-fundal);
+}
+
+.zona-descriere {
+    border-top: 2px dashed var(--culoare-nav);
+    padding-top: 15px;
+    margin-top: 10px;
+}
+
+.eticheta-descriere {
+    display: block;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: var(--culoare-fundal);
+}
+
+.descriere-text {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.zona-actiuni {
+    margin-top: 20px;
+}
+
+.buton-inapoi {
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--culoare-fundal);
+    color: var(--culoare-sec);
+    padding: 10px 20px;
+    border: 2px solid var(--culoare-contur);
+    border-radius: 6px;
+    font-weight: bold;
+    box-shadow: 3px 3px 0px var(--culoare-contur);
+    transition: all 0.2s ease;
+}
+
+.buton-inapoi:hover {
+    background-image: none !important;
+    background-size: 0% 0% !important;
+    border: 2px solid var(--culoare-contur) !important;
+    background-color: var(--culoare-nav);
+    color: var(--culoare-sec);
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px var(--culoare-contur);
+}
+
+@media screen and (max-width: 768px) {
+    .produs-individual-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .imag-produs img {
+        max-height: 300px;
+    }
+
+    .specificatii-lista li {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .eticheta {
+        min-width: 100%;
+    }
+}

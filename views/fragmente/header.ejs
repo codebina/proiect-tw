@@ -1,4 +1,6 @@
-<header>
+<script src="/resurse/js/tema.js"></script>
+<script src="/resurse/js/schimba_tema.js"></script>
+<header class="c1 c2 c3" id="titlu">
     <nav>
         <label id="hamburger" for="ch-menu">
             <div class="bara"></div>
@@ -47,13 +49,18 @@
                 <div class="imag-icon">
                     <span class="fa-solid fa-utensils"></span>
                 </div>
-                <div class="text-icon"><a href="meniu.html"> Meniu</a></div>
+                <div class="text-icon"><a href="/meniu"> Meniu</a></div>
                 <ul>
-                    <li><a href="meniu.html#gratar">Grătar</a></li>
-                    <li><a href="meniu.html#garnituri">Garnituri</a></li>
-                    <li><a href="meniu.html#deserturi">Deserturi</a></li>
-                    <li><a href="meniu.html#snacks">Snacks</a></li>
-                    <li><a href="meniu.html#bauturi">Băuturi</a></li>
+                    <% if (locals.optiuni && locals.optiuni.length> 0) { %>
+                        <% for (let opt of locals.optiuni) { %>
+                            <li>
+                                <a href="/meniu?tip=<%- opt.unnest %>">
+                                    <% let optiuniMeniu=opt.unnest.replace('-', ' ' ); %>
+                                        <%- optiuniMeniu[0].toUpperCase() + optiuniMeniu.slice(1) %>
+                                </a>
+                            </li>
+                            <% } %>
+                                <% } %>
                 </ul>
 
             </li>
@@ -72,5 +79,12 @@
 
     <div id="watermark">
         <p>Sabina<br>Brînzei</p>
+    </div>
+    <div class="d-flex align-items-center gap-2 my-2 justify-content-center">
+        <i class="bi bi-sun-fill text-warning"></i>
+        <div class="form-check form-switch m-0 p-0 d-flex align-items-center">
+            <input class="form-check-input m-0 custom-switch" type="checkbox" id="schimba_tema" role="switch">
+        </div>
+        <i class="bi bi-moon-stars-fill text-secondary"></i>
     </div>
 </header>

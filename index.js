@@ -8,30 +8,85 @@ const pg = require("pg");
 app = express();
 app.set("view engine", "ejs")
 
+client=new pg.Client({
+    database:"produse",
+    user:"sabina",
+    password:"sabina",
+    host:"localhost",
+    port:5432
+})
+
+client.connect()
+
+function initMeniuDerulant() {
+    client.query("select * from unnest(enum_range(null::tipuri_produse))", function(err, rezOptiuni) {
+        if (err) {
+            console.log("Eroare", err);
+        } else {
+            obGlobal.optiuniMeniu = rezOptiuni.rows;
+        }
+    });
+}
+initMeniuDerulant();
+
+app.get("/meniu", function(req, res){
+    let clauzaWhere=""
+    if (req.query.tip)
+        clauzaWhere=`where tip_produs='${req.query.tip}'`
+    client.query(`select * from produse ${clauzaWhere}`, function(err, rez){
+        if (err){
+            console.log("Eroare", err)
+            afisareEroare(res,2)
+        }
+        else{
+            client.query("select * from unnest(enum_range(null::tipuri_produse))", function(err, rezOptiuni){
+                if (err){
+                    afisareEroare(res,2)
+                }
+                else{
+                    res.render("pagini/meniu",{
+                        produse:rez.rows,
+                        optiuni:rezOptiuni.rows
+                    })
+                }
+            })
+            
+        }
+    })
+})
 
 
+app.get("/meniu/:id", function(req, res){
+    client.query(`select * from produse where id=${req.params.id}`, function(err, rez){
+    if (err){
+        console.log("Eroare", err)
+        afisareEroare(res,2)
+    }
+    else{
+        if (rez.rowCount==0){
+            afisareEroare(res,404,"Produs inexistent")
+        }
+        else{
+            res.render("pagini/produs",{
+                prod:rez.rows[0],
+            })
+        }
+        
+    }
+})
+})
 obGlobal = {
     obErori: null,
     obImagini: null,
     folderScss: path.join(__dirname, "resurse/scss"),
     folderCss: path.join(__dirname, "resurse/css"),
     folderBackup: path.join(__dirname, "backup"),
+    optiuniMeniu:[]
 }
 
 console.log("Folder index.js", __dirname);
 console.log("Folder curent (de lucru)", process.cwd());
 console.log("Cale fisier", __filename);
-
-
-// client=new pg.Client({
-//     database:"produse",
-//     user:"sabina",
-//     password:"sabina",
-//     host:"localhost",
-//     port:5432
-// })
-
-// client.connect()
 
 let vect_foldere = ["temp", "logs", "backup", "fisiere_uploadate"] //ex 20
 for (let folder of vect_foldere) {
@@ -52,7 +107,8 @@ app.get("/favicon.ico", function (req, res) {
 app.get(["/", "/index", "/home"], function (req, res) {
     res.render("pagini/index", {
         ip: req.ip, //ex 16
-        imagini: obGlobal.obImagini.imagini
+        imagini: obGlobal.obImagini.imagini,
+        optiuni: obGlobal.optiuniMeniu
     });
 });
 
@@ -167,6 +223,7 @@ fs.watch(obGlobal.folderScss, function (eveniment, numeFis) {
     }
 })
 
+
 // ex 9
 //cauta pagina cu orice string din request sid daca nu il gaseste => pag de eroare
 app.get("/*pagina", function (req, res) {
@@ -180,7 +237,7 @@ app.get("/*pagina", function (req, res) {
         return;
     }
     try {
-        res.render("pagini" + req.url, { imagini: obGlobal.obImagini?.imagini }, function (err, rezRandare) {
+        res.render("pagini" + req.url, { imagini: obGlobal.obImagini?.imagini, optiuni: obGlobal.optiuniMeniu}, function (err, rezRandare) {
             if (err) {
                 if (err.message.includes("Failed to lookup view")) {
                     afisareEroare(res, 404); //ex 10
@@ -204,7 +261,6 @@ app.get("/*pagina", function (req, res) {
         }
     }
 });
-
 
 app.listen(8080);
 console.log("Serverul a pornit!");
