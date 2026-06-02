@@ -25,22 +25,22 @@ const nodemailer = require("nodemailer");
 class Utilizator {
     /** @type {string} Tipul de conexiune folosit pentru baza de date */
     static tipConexiune = "local";
-    
+
     /** @type {string} Numele tabelului */
     static tabel = "utilizatori";
-    
+
     /** @type {string} Cheia folosita la criptarea parolelor */
     static parolaCriptare = "tehniciweb";
-    
+
     /** @type {string} Adresa de email a serverului folosita pentru trimiterea mail-ului de confirmare */
     static emailServer = "useruserila0@gmail.com";
-    
+
     /** @type {number} Lungimea codului generat de criptare */
     static lungimeCod = 64;
-    
+
     /** @type {string} Domeniul pe care ruleaza aplicatia */
     static numeDomeniu = "localhost:8080";
-    
+
     /** @type {string} Proprietate privata pentru mesajele de eroare interne */
     #eroare;
 
@@ -193,7 +193,7 @@ class Utilizator {
         if (!exista) {
             throw new Error("Utilizatorul nu exista pentru a fi modificat");
         }
-        
+
         if (noileDate.parola) {
             noileDate.parola = Utilizator.criptareParola(noileDate.parola);
         }
@@ -295,7 +295,7 @@ class Utilizator {
                 rejectUnauthorized: false
             }
         });
-        
+
         await transp.sendMail({
             from: Utilizator.emailServer,
             to: this.email,
@@ -334,35 +334,49 @@ class Utilizator {
             return null;
         }
     }
+    /**
+         * Callback-ul folosit pentru procesarea utilizatorului dupa username conform cerintei din laborator
+         * @callback GetUtilizDupaUsernameCallback
+         * @param {Utilizator|null} utilizator - Instanta utilizatorului gasit sau null in caz de eroare/lipsa
+         * @param {object} obparam - Obiectul custom primit ca parametru (ex: datele din login)
+         * @param {number|null} eroare - Codul de eroare: null (succes), -1 (nu exista), -2 (eroare baza de date)
+         */
 
     /**
-     * Callback-ul folosit pentru procesarea utilizatorului dupa username conform cerintei din laborator
-     * @callback GetUtilizDupaUsernameCallback
-     * @param {Utilizator} utilizator - Instanta utilizatorului din baza de date
-     * @param {object} obparam - Obiectul custom cu campuri setate primit ca parametru
-     */
-
-    /**
-     * Cauta un utilizator din baza de date dupa username cu callback si executie de logica externa
+     * Cauta un utilizator din baza de date dupa username cu callback si gestionare coduri de eroare
      * @param {string} username - Username-ul cautat
-     * @param {object} obparam - Un obiect suplimentar cu proprietati transmise spre verificare (ex: parola introdusa)
-     * @param {GetUtilizDupaUsernameCallback} callback - Functia de tip callback apelata dupa finalizarea cautarii
+     * @param {object} obparam - Un obiect suplimentar cu proprietati transmise spre verificare (ex: parola de la login)
+     * @param {GetUtilizDupaUsernameCallback} proceseazaUtiliz - Functia callback apelata dupa finalizarea query-ului
      * @returns {void|null} Returneaza direct null doar daca username-ul furnizat este gol
      */
-    static getUtilizDupaUsername(username, obparam, callback) {
+    static getUtilizDupaUsername(username, obparam, proceseazaUtiliz) {
         if (!username) return null;
+        let eroare = null;
+
+        // Folosim 'conditii' adaptat la clasa AccesBD actualizata
         AccesBD.getInstanta(Utilizator.tipConexiune).select(
             {
                 tabel: "utilizatori",
                 campuri: ['*'],
-                conditiiAnd: [`username='${username}'`]
+                conditii: [`username='${username}'`]
             }
             , function (err, rezSelect) {
                 let u = null;
-                if (!err && rezSelect.rowCount > 0) {
+
+                if (err) {
+                    console.error("Utilizator:", err);
+                    eroare = -2; // Eroare de conexiune / SQL
+                }
+                else if (!rezSelect || rezSelect.rowCount == 0) {
+                    eroare = -1; // Utilizatorul nu a fost gasit
+                }
+                else {
+                    // Instantiem utilizatorul DOAR daca baza de date a intors intr-adevar un rand!
                     u = new Utilizator(rezSelect.rows[0]);
                 }
-                callback(u, obparam);
+
+                // Apelam callback-ul cu cele 3 argumente, exact ca la laborator
+                proceseazaUtiliz(u, obparam, eroare);
             });
     }
 
