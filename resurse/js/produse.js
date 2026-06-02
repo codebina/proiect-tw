@@ -1,38 +1,68 @@
+function getCookie(nume) {
+    vectorParametri = document.cookie.split(";") // ["a=10","b=ceva"]
+    for (let param of vectorParametri) {
+        if (param.trim().startsWith(nume + "="))
+            return param.split("=")[1]
+    }
+    return null;
+}
+
 function eliminaDiacritice(text) {
     if (!text) return "";
     return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
-    function validareInput() {
-        let nuNr = /[^0-9]/g;
-        let nuLitere = /[^a-zA-ZăîâșțĂÎÂȘȚ\s]/g;
+function validareInput() {
+    let nuNr = /[^0-9]/g;
+    let nuLitere = /[^a-zA-ZăîâșțĂÎÂȘȚ\s]/g;
 
-        let inpNume = document.getElementById("inp-nume");
-        let inpNumeVal = inpNume.value.trim();
-        
-        if (inpNumeVal !== "" && inpNumeVal.match(nuLitere) !== null) {
-            alert("Input greșit! Ai voie să scrii doar litere în acest câmp.");
-            inpNume.classList.add("is-invalid");
-            return false;
-        }
-        else {
+    let inpNume = document.getElementById("inp-nume");
+    let inpNumeVal = inpNume.value.trim();
+
+    if (inpNumeVal !== "" && inpNumeVal.match(nuLitere) !== null) {
+        alert("Input greșit! Ai voie să scrii doar litere în acest câmp.");
+        inpNume.classList.add("is-invalid");
+        return false;
+    }
+    else {
         inpNume.classList.remove("is-invalid");
     }
-        let inpGramaj = document.getElementById("inp-gramaj");
-        let inpGramajVal = inpGramaj.value.trim();
-        
-        if (inpGramajVal !== "" && inpGramajVal.match(nuNr) !== null) {
-            alert("Input greșit! Ai voie să scrii doar cifre în acest câmp.");
-            inpGramaj.value = "";
-            inpGramaj.placeholder = "Doar cifre aici!";
-            return false;
-        }
+    let inpGramaj = document.getElementById("inp-gramaj");
+    let inpGramajVal = inpGramaj.value.trim();
 
-        return true;
+    if (inpGramajVal !== "" && inpGramajVal.match(nuNr) !== null) {
+        alert("Input greșit! Ai voie să scrii doar cifre în acest câmp.");
+        inpGramaj.value = "";
+        inpGramaj.placeholder = "Doar cifre aici!";
+        return false;
     }
+
+    return true;
+}
 
 window.onload = function () {
 
+    let butoane = document.getElementsByClassName("accordion-button");
+
+    for (let buton of butoane) {
+        let parteAscunsa = buton.getAttribute("data-bs-target").replace("#", "");
+        let divContent = document.getElementById(parteAscunsa);
+
+        let stare = localStorage.getItem(parteAscunsa);
+
+        if (stare == "deschis") {
+            buton.classList.remove("collapsed");
+            if (divContent) divContent.classList.add("show");
+        }
+
+        buton.onclick = function () {
+            if (buton.classList.contains("collapsed")) {
+                localStorage.setItem(parteAscunsa, "inchis");
+            } else {
+                localStorage.setItem(parteAscunsa, "deschis");
+            }
+        };
+    }
 
     //2 litere
     function numarLitereGresite(a, b) {
@@ -54,17 +84,17 @@ window.onload = function () {
     };
 
     document.getElementById("inp-nume").oninput = function () {
-    let nuLitere = /[^a-zA-ZăîâșțĂÎÂȘȚ\s]/g;
-    let valoare = this.value.trim();
+        let nuLitere = /[^a-zA-ZăîâșțĂÎÂȘȚ\s]/g;
+        let valoare = this.value.trim();
 
-    if (valoare === "" || valoare.match(nuLitere) === null) {
-        this.classList.remove("is-invalid");
-    }
-};
+        if (valoare === "" || valoare.match(nuLitere) === null) {
+            this.classList.remove("is-invalid");
+        }
+    };
 
     document.getElementById("filtrare").onclick = function () {
 
-        if(!validareInput()){
+        if (!validareInput()) {
             return;
         }
         //1. text
@@ -120,6 +150,7 @@ window.onload = function () {
         let inpDescriereBruta = document.getElementById("txt-descriere").value.trim().toLowerCase();
         let inpDescriere = eliminaDiacritice(inpDescriereBruta);
 
+        let produseVizibile = 0;
         let produse = document.getElementsByClassName("produs");
         for (let prod of produse) {
             prod.style.display = "none";
@@ -163,6 +194,16 @@ window.onload = function () {
 
             if (cond1 && cond2 && cond3 && cond4 && cond5 && cond6 && cond7 && cond8) {
                 prod.style.display = "block";
+                produseVizibile++;
+            }
+        }
+        let elementCounter = document.getElementById("counter-produse");
+
+        if (elementCounter) {
+            if (produseVizibile == 0) {
+                elementCounter.innerHTML = `Nu există niciun produs pentru filtrele selectate.`;
+            } else {
+                elementCounter.innerHTML = `Sunt afișate ${produseVizibile} produse.`;
             }
         }
     };
@@ -222,7 +263,7 @@ window.onload = function () {
     document.getElementById("sortDescresc").onclick = function () { sorteaza(-1) }
 
     document.getElementById("sumar").onclick = function () {
-        if(!validareInput()){
+        if (!validareInput()) {
             return;
         }
         let produse = document.getElementsByClassName("produs");
@@ -262,3 +303,43 @@ window.onload = function () {
         }
     };
 };
+
+window.addEventListener("load", function () {
+    let ultimulProdus = getCookie("ultimul_produs");
+
+    if (ultimulProdus) {
+
+        let p = document.getElementById("idUltimulProdus");
+
+        if (!p) {
+            p = document.createElement("p");
+            p.innerHTML = `Ultimul produs vizualizat: <strong>${ultimulProdus}</strong>.`;
+
+            p.style.position = "fixed";
+            p.style.bottom = "90px";
+            p.style.right = "20px";
+            p.style.backgroundColor = "var(--culoare-nav)";
+            p.style.color = "var(--culoare-sec)";
+            p.style.padding = "15px 25px";
+            p.style.margin = "0";
+            p.style.zIndex = "1000";
+            p.style.borderRadius = "10px";
+            p.style.border = "1px solid var(--culoare-sec)";
+            p.id = "idUltimulProdus";
+
+            let sectiuneProduse = document.getElementById("sectiune-produse");
+            if (sectiuneProduse) {
+                sectiuneProduse.parentElement.insertBefore(p, sectiuneProduse);
+            }
+
+            setTimeout(function () {
+                let p1 = document.getElementById("idUltimulProdus");
+                if (p1) p1.remove();
+            }, 5000);
+
+        } else {
+            p.innerHTML = `Ultimul produs vizualizat: <strong>${ultimulProdus}</strong>.`;
+        }
+    }
+
+});

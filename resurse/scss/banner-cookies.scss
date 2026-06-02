@@ -1,0 +1,39 @@
+#banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 15px;
+    background-color: var(--culoare-nav);
+    color: var(--culoare-sec);
+    text-align: center;
+    z-index: 10000;
+    display: none;
+    transform: translateY(100%);
+
+    animation: afisareBanner 3s linear forwards;
+}
+
+@keyframes afisareBanner {
+    0% {
+        transform: translateY(100%);
+        color: var(--culoare-sec);
+    }
+    70% {
+       
+        transform: translateY(-20px); 
+        color: var(--culoare-detaliu);
+    }
+    100% {
+        transform: translateY(0);
+        color: var(--culoare-sec);
+    }
+}
+
+@media (max-width: 1100px) {
+    #banner {
+        transform: translateY(0) !important;
+        animation: none !important;
+    }
+}

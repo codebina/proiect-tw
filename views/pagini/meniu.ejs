@@ -130,6 +130,9 @@
             </p>
         </div>
 
+        <p id="counter-produse">
+        </p>
+
         <section id="sectiune-produse">
             <h2>Produsele Noastre</h2>
 
@@ -198,8 +201,18 @@
                                 </p>
 
                                 <p class="descriere">
-                                    <strong class="nume-caract">Descriere:</strong>
-                                    <span class="val-descriere"><%- prod.descriere %></span>
+                                    <div class = "accordion">
+                                        <div class = "accordion-item">
+                                            <button class="accordion-button collapsed py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#acordeon-<%- prod.id %>">
+                                                <strong class="nume-caract">Descriere:</strong>
+                                            </button>
+                                            <div id = "acordeon-<%- prod.id %>" class="accordion-collapse collapse">
+                                                <div class="accordion-body">
+                                                    <span class="val-descriere"><%- prod.descriere %></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </p>
 
                                 <label class="selecteaza-cos">

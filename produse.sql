@@ -50,4 +50,3 @@ INSERT INTO produse (nume, descriere, pret, gramaj, tip_produs, categorie, ingre
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO sabina;
 GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO sabina;
 
-GRANT ALL PRIVILEGES ON DATABASE produse TO sabina ;
