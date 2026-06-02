@@ -202,7 +202,8 @@ class Utilizator {
         await new Promise((resolve, reject) => {
             instBD.update({
                 tabel: Utilizator.tabel,
-                campuri: noileDate,
+                campuri: Object.keys(noileDate),
+                valori: Object.values(noileDate),
                 conditiiAnd: [`username='${this.username}'`]
             }, function (err, rez) {
                 if (err) reject(err);
@@ -358,7 +359,7 @@ class Utilizator {
             {
                 tabel: "utilizatori",
                 campuri: ['*'],
-                conditii: [`username='${username}'`]
+                conditiiAnd: [`username='${username}'`]
             }
             , function (err, rezSelect) {
                 let u = null;
